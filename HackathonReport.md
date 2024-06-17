@@ -1,6 +1,28 @@
 # HackathonReport
 Report for our Hackathon Experience at Eth Global Brussels from 12th-14th of July.
 
+## Team && Roles
+- **Paul Grossmann (pgrossma)**: Frontend, Backend && Database
+- **Louen Greau (lgreau)**: Blockchain Connection && Backend
+- **Leon Zipp (lzipp)**: Backend, Database && Blockchain Connection
+
+## Project: Address Relation Visualizer for Ethereum-Blockchain
+### Technologies
+#### Backend
+- **Go**: Golang was used to create the backend and establish the connection to the ethereum network. For code creation we used...
+  - **go-ethereum**:
+  - **sqlc**:
+  - 
+#### Database
+- **SQL (Postgresql)**: Our database was written using postgres
+#### Hosting
+- **Docker**:
+  - **docker images**
+  - **docker-compose**
+  - **devcontainer**
+#### Authentication
+- **keycloak**
+
 ## 12th of July
 Lorem markdownum pisces [quicquam generumque](http://magni.com/) sequantur tam
 talis umero, per. Struxisse quod digna, est [et
