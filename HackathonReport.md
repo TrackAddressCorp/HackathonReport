@@ -7,19 +7,27 @@ Report for our Hackathon Experience at Eth Global Brussels from 12th-14th of Jul
 - **Leon Zipp (lzipp)**: Backend, Database && Blockchain Connection
 
 ## Project: Address Relation Visualizer for Ethereum-Blockchain
+The goal of our project was to write a simple program that could do the following:
+1. Ask for a public address.
+2. Scan the ethereum blockchain for every transaction related to this public address.
+3. Save the resulting transactions & other relevant data to the database
+4. Visualize the corresponding relations.
+5. Make resulting data downloadable as csv, xlsx, etc.
+
 ### Technologies
 #### Backend
 - **Go**: Golang was used to create the backend and establish the connection to the ethereum network. For code creation we used...
-  - **go-ethereum**:
-  - **sqlc**:
-  - 
+  - **go-ethereum**: We used this library to connect our backend to the ethereum blockchain. For this we created an eth-client instance, wrapped it in a helper-struct and implemented methods for this struct to run all necessary functionalities.
+  - **sqlc**: This library helps converting (postgre)sql code to go code, making it injection-proof while doing so. It saves a lot of work, because instead of writing pure go, we could instead write much simpler & shorter sql-statements instead.
 #### Database
-- **SQL (Postgresql)**: Our database was written using postgres
+- **SQL (Postgresql)**: Our database was written using postgres. The structure can be seen here: [image]...
 #### Hosting
 - **Docker**:
-  - **docker images**
-  - **docker-compose**
-  - **devcontainer**
+  - **docker images**:
+    - **Backend**: We wrote our own docker image from the base go-image.
+    - **Database**: For this we used the standard postgres docker image. 
+  - **docker-compose**: Since we only had 48 hours & none of us are well-versed in kubernetes, we decided on using docker-compose instead. Even though it is less safe & stable compared to kubernetes, it is easy to use and can be quickly set up.
+  - **devcontainer**: For not having to run every command using docker-compose, we chose to use a devcontainer in conjunction with vscode. As the image the dev-stage of our backend image was used.
 #### Authentication
 - **keycloak**
 
